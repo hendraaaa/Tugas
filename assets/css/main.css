@@ -1,0 +1,59 @@
+.text-center{
+	
+	display: block;
+  white-space: nowrap;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+ 
+}
+.button-detail{
+	
+	margin: 0 auto;
+}
+.containerr {
+  position: relative;
+  text-align: center;
+  color: white;
+  width: 100px;
+
+}
+
+
+.top-left {
+  position: absolute;
+  top: 8px;
+  width: 100px;
+  left: 10px;
+  color: white;
+
+}
+.background{
+		background-color: grey;
+  	opacity: 0.9;
+}
+.oke{
+	 position: absolute;
+	  top: 9px;
+	   left: 45px;
+}
+.b{
+  color: white;
+
+}
+.chart{
+ font: bold 15px Arial !important; 
+ width: 29px;
+height: 16px;
+  position: absolute; 
+  vertical-align: middle; 
+  margin-top: 16px; 
+  margin-left: -39px; 
+  border: 0px; 
+  background: none; 
+  text-align: center; 
+  color: yellow !important;
+  padding: 0px; 
+  -webkit-appearance: none;
+}
