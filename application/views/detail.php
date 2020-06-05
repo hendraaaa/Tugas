@@ -79,41 +79,11 @@
 		  </div>
 		</nav>
 
-		<div class="container mt-3">
-			<div class="row">
-				<?php
-					foreach ($listfilm as $row) {
-						echo '
-
-						<div class="col-lg-3 col-sm-12 col-md-4 mb-5">
-							<div class="card" style="width: 13rem;">
-						
-								<a href="'.base_url().'detail/film/'.$row['id_film'].'"><img src="'.base_url().'/foto/'.$row['poster_film'].'"style="width: 100%;"></a>
-								<div class="top-left" style="margin-left: -30px">
-
-									<input type="text" class="knob chart" value="'.$row['rating'].'" data-skin="tron" data-thickness="0.2" data-width="60" data-height="60" data-fgcolor="#13506b" data-readonly="true" readonly="readonly">
-									
-									
-								</div>
-					  
-							  <div class="card-body">
-							    <p class="card-text"><b>'.$row['namaFilm'].'</b></p>
-							    <p class="card-text" style="margin-top: -15px;">'.$row['tgl_rilis'].'</p>
-							  </div>
-							</div>
-					
-						</div>
-
-						';
-					}
-
-				?>
-
-				
-				
-			</div>
-			
-		</div>
+		
+	<div class="jumbotron">
+		<h4>hello world</h4>
+	</div>
+	
 
 	
          
