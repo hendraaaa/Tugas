@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2020 at 03:31 AM
+-- Generation Time: Jun 05, 2020 at 05:10 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -21,6 +21,23 @@ SET time_zone = "+00:00";
 --
 -- Database: `perfilman`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `aktor`
+--
+
+CREATE TABLE `aktor` (
+  `id_aktor` int(11) NOT NULL,
+  `peran` varchar(255) NOT NULL,
+  `jenis_kl` varchar(255) NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `tgl_lahir` datetime NOT NULL,
+  `umur` int(11) NOT NULL,
+  `biografu` varchar(255) NOT NULL,
+  `id_film` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -70,9 +87,49 @@ INSERT INTO `film` (`id_film`, `namaFilm`, `rating`, `genre`, `durasi`, `tgl_ril
 (25, 'Captain Marvel (2019)', 70, 'Aksi, Petualangan, Cerita Fiksi ', '2h 4m', '2019-03-08', 'Captain Marvel.jpg', 'Kisah ini mengikuti Carol Danvers saat ia menjadi salah satu pahlawan paling kuat di alam semesta ketika Bumi terperangkap di tengah perang galaksi antara dua ras alien. Bertempat di tahun 1990-an, Kapten Marvel adalah petualangan yang sepenuhnya baru dari periode yang sebelumnya tidak terlihat dalam sejarah Marvel Cinematic Universe.'),
 (26, 'Fast & Furious Presents: Hobbs & Shaw (2019)', 68, 'Aksi, Petualangan, Komedi ', '2h 17m', '2019-08-02', 'Fast & Furious Presents Hobbs & Shaw.jpg', 'Hobbs & Shaw (2019) cinema film baru barat yang sangat seru Ini bercerita Luke Hobbs (Dwayne Johnson) terpaksa membentuk aliansi yang mustahil dengan Deckard Shaw (Jason Statham). Keduanya terpaksa bersatu membantu Hattie Shaw (Vanessa Kirby) untuk memburu senjata virus berbahaya dan Brixton (Idris Elba). Brixton adalah penjahat jenis baru yang berhasil mengubah dirinya menjadi manusia super. Keberadaanya menjadi ancaman bagi umat manusia.');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `film_favorite`
+--
+
+CREATE TABLE `film_favorite` (
+  `id_film_favorite` int(11) NOT NULL,
+  `id_film` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `film_mendatang`
+--
+
+CREATE TABLE `film_mendatang` (
+  `id_film_mendatang` int(11) NOT NULL,
+  `id_film` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `film_tayang`
+--
+
+CREATE TABLE `film_tayang` (
+  `id_film_tayang` int(11) NOT NULL,
+  `id_film` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `aktor`
+--
+ALTER TABLE `aktor`
+  ADD PRIMARY KEY (`id_aktor`),
+  ADD KEY `id_film` (`id_film`);
 
 --
 -- Indexes for table `film`
@@ -81,14 +138,87 @@ ALTER TABLE `film`
   ADD PRIMARY KEY (`id_film`);
 
 --
+-- Indexes for table `film_favorite`
+--
+ALTER TABLE `film_favorite`
+  ADD PRIMARY KEY (`id_film_favorite`),
+  ADD KEY `id_film` (`id_film`);
+
+--
+-- Indexes for table `film_mendatang`
+--
+ALTER TABLE `film_mendatang`
+  ADD PRIMARY KEY (`id_film_mendatang`),
+  ADD KEY `id_film` (`id_film`);
+
+--
+-- Indexes for table `film_tayang`
+--
+ALTER TABLE `film_tayang`
+  ADD PRIMARY KEY (`id_film_tayang`),
+  ADD KEY `id_film` (`id_film`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `aktor`
+--
+ALTER TABLE `aktor`
+  MODIFY `id_aktor` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `film`
 --
 ALTER TABLE `film`
   MODIFY `id_film` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
+--
+-- AUTO_INCREMENT for table `film_favorite`
+--
+ALTER TABLE `film_favorite`
+  MODIFY `id_film_favorite` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `film_mendatang`
+--
+ALTER TABLE `film_mendatang`
+  MODIFY `id_film_mendatang` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `film_tayang`
+--
+ALTER TABLE `film_tayang`
+  MODIFY `id_film_tayang` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `aktor`
+--
+ALTER TABLE `aktor`
+  ADD CONSTRAINT `aktor_ibfk_1` FOREIGN KEY (`id_film`) REFERENCES `film` (`id_film`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `film_favorite`
+--
+ALTER TABLE `film_favorite`
+  ADD CONSTRAINT `film_favorite_ibfk_1` FOREIGN KEY (`id_film`) REFERENCES `film` (`id_film`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `film_mendatang`
+--
+ALTER TABLE `film_mendatang`
+  ADD CONSTRAINT `film_mendatang_ibfk_1` FOREIGN KEY (`id_film`) REFERENCES `film` (`id_film`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `film_tayang`
+--
+ALTER TABLE `film_tayang`
+  ADD CONSTRAINT `film_tayang_ibfk_1` FOREIGN KEY (`id_film`) REFERENCES `film` (`id_film`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
