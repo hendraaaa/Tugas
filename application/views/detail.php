@@ -4,26 +4,6 @@
 	<title>home</title>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/main.css">
-
-  <!-- Font Awesome -->
-	  <link rel="stylesheet" href="<?php echo base_url()?>assets/css/font-awesome/css/font-awesome.css">
-	  <!-- Ionicons -->
-	  <link rel="stylesheet" href="<?php echo base_url()?>assets/css/Ionicons/css/ionicons.css">
-	  <!-- Theme style -->
-	  <link rel="stylesheet" href="<?php echo base_url()?>assets/dist/css/AdminLTE.css">
-	  <!-- AdminLTE Skins. Choose a skin from the css/skins
-	       folder instead of downloading all of them to reduce the load. -->
-	  <link rel="stylesheet" href="<?php echo base_url()?>assets/dist/css/skins/_all-skins.css">
-
-	  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	  <!--[if lt IE 9]>
-	  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	  <![endif]-->
-
-	  <!-- Google Font -->
-	  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body>
 
@@ -80,10 +60,83 @@
 		</nav>
 
 		
-	<div class="bg-img">
-		<h4>hello world</h4>
+	<div class="background b mt-4" style="background-image:linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.6)), url('<?php echo base_url().'foto/'.$listfilm[0]['bg-image'];?>');">
+
+		<div class="row">
+		   <div class="col-md-3">
+		   	<img class="img-fluid ml-3 mt-3 mb-3" src="<?php echo base_url().'foto/'.$listfilm[0]['poster_film']?>">
+		   </div>
+		   <div class="col-md-8 mt-3 ml-4">
+		   	<h3><b><?php echo $listfilm[0]['namaFilm']?></b></h3>
+		   	 <div class="row">
+		   	 	<div class="col-md-8">
+		   	 		<?php echo $listfilm[0]['tgl_rilis']." <b>.</b>"?>
+		   	 		<?php echo $listfilm[0]['genre']." <b>.</b>"?>
+		   	 		<?php echo $listfilm[0]['durasi']?>
+		   	 	</div>
+		   	 	
+		   	 </div>
+		   	 <div class="row mt-4">
+		   	 	<div class="col-md-8">
+		   	 		<input type="text" class="knob chart" value="<?php echo $listfilm[0]['rating']?>" data-skin="tron" data-thickness="0.2" data-width="60" data-height="60" data-fgcolor="#a6f87e" data-readonly="true" readonly="readonly">
+		   	 	</div>
+		   	 	
+		   	 </div>
+
+		   	 <div class="row mt-4">
+		   	 	<div class="col-md-8">
+		   	 		<h5>Kilasan Singkat</h5>
+		   	 	</div>
+		   	 	
+		   	 </div>
+		   	 <div class="row">
+		   	 	
+		   	 	<div class="col justify-center">
+
+		   	 		<p class="font-weight-light text-justify"><?php echo $listfilm[0]['overview']?></p>
+		   	 	</div>
+		   	 	
+		   	 </div>
+		   </div>	   	
+		</div>
 	</div>
+
+	<div class="container mt-4">
+		<h4>Aktor</h4>
+		<div class="row">
+			<div class="col-md-8">
+				<div class="wrapper">
+					<?php
+						foreach ($listaktor as $row) {
+							echo '
+								<div class="card item mt-3 ml-3 mb-3" style="width: 13rem;">
+						
+									<a href="'.base_url().'detail/film/'.$row['id_film'].'"><img src="'.base_url().'foto/'.$row['foto'].'" style="width: 100%;"style="width: 100%;"></a>
+								  
+									 <div class="card-body">
+										<p class="card-text"><b>'.$row['nama'].'</b></p>
+									</div>
+								</div>
+
+
+							';
+						}
+					?>
+					
+					
 	
+					
+				</div>
+					
+			</div>
+		</div>
+		
+	</div>
+
+
+							
+
+
 
 	
          

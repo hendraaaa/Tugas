@@ -12,6 +12,8 @@ class Detail extends CI_Controller {
 
 		$data['listfilm'] = $this->Detail_model->detailfilm($id_film);
 
+		$data['listaktor'] = $this->Detail_model->detailaktor($id_film);
+
 		//var_dump($data);die;
 		$this->load->view('detail',$data);
 	}

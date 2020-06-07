@@ -17,4 +17,18 @@ class Detail_model extends CI_Model
 
 		return $data;
 	}
+	public function detailaktor($id_film)
+	{
+		$this->load->database();
+
+		$query = "SELECT * FROM aktor WHERE id_film = $id_film ";
+
+		$result = $this->db->query($query);
+
+		$dataAktor = $result->result_array();
+
+		//var_dump($dataAktor);die;
+
+		return $dataAktor;
+	}
 }
