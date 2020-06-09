@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 09, 2020 at 03:46 PM
+-- Generation Time: Jun 09, 2020 at 04:02 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -21,6 +21,35 @@ SET time_zone = "+00:00";
 --
 -- Database: `perfilman`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `aktor`
+--
+
+CREATE TABLE `aktor` (
+  `id_aktor` int(11) NOT NULL,
+  `peran` varchar(255) NOT NULL,
+  `jenis_kl` varchar(255) NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `tgl_lahir` date NOT NULL,
+  `umur` int(11) NOT NULL,
+  `biografu` mediumtext NOT NULL,
+  `foto` varchar(255) NOT NULL,
+  `id_film` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `aktor`
+--
+
+INSERT INTO `aktor` (`id_aktor`, `peran`, `jenis_kl`, `nama`, `tgl_lahir`, `umur`, `biografu`, `foto`, `id_film`) VALUES
+(1, 'Riwayat Perfilman', 'Pria', 'Brad Pitt', '1963-12-18', 56, 'William Bradley \"Brad\" Pitt (born December 18, 1963) is an American actor and film producer. Pitt has received two Academy Award nominations and four Golden Globe Award nominations, winning one. He has been described as one of the world\'s most attractive men, a label for which he has received substantial media attention. Pitt began his acting career with television guest appearances, including a role on the CBS prime-time soap opera Dallas in 1987. He later gained recognition as the cowboy hitchhiker who seduces Geena Davis\'s character in the 1991 road movie Thelma & Louise. Pitt\'s first leading roles in big-budget productions came with A River Runs Through It (1992) and Interview with the Vampire (1994). He was cast opposite Anthony Hopkins in the 1994 drama Legends of the Fall, which earned him his first Golden Globe nomination. In 1995 he gave critically acclaimed performances in the crime thriller Seven and the science fiction film 12 Monkeys, the latter securing him a Golden Globe Award for Best Supporting Actor and an Academy Award nomination.\r\n\r\n', 'foto-Brad-Pitt.jpg', 2),
+(2, 'Riwayat Perfilman', 'Pria', 'Tommy Lee Jones', '1946-09-15', 73, 'Tommy Lee Jones (born September 15, 1946) is an American actor and film director.\r\n\r\nHe has received three Academy Award nominations, winning one as Best Supporting Actor for the 1993 thriller film The Fugitive. His notable film roles include federal marshal Samuel Gerard in The Fugitive and its sequel U.S. Marshals, the villain \"Two-Face\" in Batman Forever, terrorist William Strannix in Under Siege, Agent K in the Men in Black films, former Texas Ranger Woodrow F. Call in Lonesome Dove, Ed Tom Bell in No Country for Old Men, a Texas Ranger in Man of the House and rancher Pete Perkins in The Three Burials of Melquiades Estrada. Jones has also portrayed real-life figures such as businessman Howard Hughes, executed murderer Gary Gilmore, Oliver Lynn in Coal Miner\'s Daughter and baseball great Ty Cobb.\r\n\r\nDescription above from the Wikipedia article Tommy Lee Jones, licensed under CC-BY-SA, full list of contributors on Wikipedia.', 'foto-Tommy-Lee-Jones.jpg', 2),
+(3, 'Riwayat Perfilman', 'Wanita', 'Ruth Negga', '1982-01-01', 38, 'Ruth Negga (born 1982) is an Ethiopian-Irish actress who has starred in Irish films such as Capital Letters (2004), Isolation (2005) and Breakfast on Pluto (2005). She has also appeared in the BBC mini-series Criminal Justice and E4\'s Misfits.\r\n\r\n', 'foto-Ruth-Negga.jpg', 2),
+(4, 'Riwayat Perfilman', 'pria', 'John Ortiz', '1968-05-23', 52, 'John Ortiz (born November 21, 1969) is an American actor and Artistic Director/Co-Founder of LAByrinth Theater Company.\r\n\r\nDescription above from the Wikipedia article John Ortiz, licensed under CC-BY-SA, full list of contributors on Wikipedia.', 'foto-John-Ortiz.jpg', 2),
+(5, 'Riwayat Perfilman', 'wanita', 'Liv Tyler', '1977-07-01', 42, 'Liv Rundgren Tyler is an American actress and model. She is the daughter of Aerosmith\'s lead singer, Steven Tyler, and Bebe Buell, model and singer. Tyler began a career in modeling at the age of 14, but after less than a year she decided to focus on acting. She made her film debut in the 1994 film Silent Fall. She then appeared in supporting roles in Empire Records (1995), Heavy (1996), and That Thing You Do! (1996). Tyler later achieved critical recognition in the leading role Stealing Beauty (1996). She followed this by starring in supporting roles including Inventing the Abbotts (1997) and Cookie\'s Fortune (1999).\r\n\r\nTyler achieved international recognition as a result of her portrayal of Elf maiden Arwen Undómiel in the Lord of the Rings film trilogy. She has appeared in an eclectic range of films, including the 2004 comedy Jersey Girl, the indie film Lonesome Jim (2005), the drama Reign Over Me (2007) and big-budget studio films such as Armageddon (1998), The Strangers (2008) and The Incredible Hulk (2008).', 'foto-Liv-Tyler.jpg', 2);
 
 -- --------------------------------------------------------
 
@@ -75,9 +104,49 @@ INSERT INTO `film` (`id_film`, `namaFilm`, `rating`, `genre`, `durasi`, `tgl_ril
 (25, 'Captain Marvel (2019)', 70, 'Aksi, Petualangan, Cerita Fiksi ', '2h 4m', '2019-03-08', 'Captain Marvel.jpg', 'Kisah ini mengikuti Carol Danvers saat ia menjadi salah satu pahlawan paling kuat di alam semesta ketika Bumi terperangkap di tengah perang galaksi antara dua ras alien. Bertempat di tahun 1990-an, Kapten Marvel adalah petualangan yang sepenuhnya baru dari periode yang sebelumnya tidak terlihat dalam sejarah Marvel Cinematic Universe.', 'bg-Captain Marvel.jpg', '', '', 0, 0),
 (26, 'Fast & Furious Presents: Hobbs & Shaw (2019)', 68, 'Aksi, Petualangan, Komedi ', '2h 17m', '2019-08-02', 'Fast & Furious Presents Hobbs & Shaw.jpg', 'Hobbs & Shaw (2019) cinema film baru barat yang sangat seru Ini bercerita Luke Hobbs (Dwayne Johnson) terpaksa membentuk aliansi yang mustahil dengan Deckard Shaw (Jason Statham). Keduanya terpaksa bersatu membantu Hattie Shaw (Vanessa Kirby) untuk memburu senjata virus berbahaya dan Brixton (Idris Elba). Brixton adalah penjahat jenis baru yang berhasil mengubah dirinya menjadi manusia super. Keberadaanya menjadi ancaman bagi umat manusia.', 'bg-Fast & Furious Presents Hobbs & Shaw.jpg', '', '', 0, 0);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `film_favorite`
+--
+
+CREATE TABLE `film_favorite` (
+  `id_film_favorite` int(11) NOT NULL,
+  `id_film` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `film_mendatang`
+--
+
+CREATE TABLE `film_mendatang` (
+  `id_film_mendatang` int(11) NOT NULL,
+  `id_film` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `film_tayang`
+--
+
+CREATE TABLE `film_tayang` (
+  `id_film_tayang` int(11) NOT NULL,
+  `id_film` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `aktor`
+--
+ALTER TABLE `aktor`
+  ADD PRIMARY KEY (`id_aktor`),
+  ADD KEY `id_film` (`id_film`);
 
 --
 -- Indexes for table `film`
@@ -86,14 +155,87 @@ ALTER TABLE `film`
   ADD PRIMARY KEY (`id_film`);
 
 --
+-- Indexes for table `film_favorite`
+--
+ALTER TABLE `film_favorite`
+  ADD PRIMARY KEY (`id_film_favorite`),
+  ADD KEY `id_film` (`id_film`);
+
+--
+-- Indexes for table `film_mendatang`
+--
+ALTER TABLE `film_mendatang`
+  ADD PRIMARY KEY (`id_film_mendatang`),
+  ADD KEY `id_film` (`id_film`);
+
+--
+-- Indexes for table `film_tayang`
+--
+ALTER TABLE `film_tayang`
+  ADD PRIMARY KEY (`id_film_tayang`),
+  ADD KEY `id_film` (`id_film`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `aktor`
+--
+ALTER TABLE `aktor`
+  MODIFY `id_aktor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `film`
 --
 ALTER TABLE `film`
   MODIFY `id_film` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
+--
+-- AUTO_INCREMENT for table `film_favorite`
+--
+ALTER TABLE `film_favorite`
+  MODIFY `id_film_favorite` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `film_mendatang`
+--
+ALTER TABLE `film_mendatang`
+  MODIFY `id_film_mendatang` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `film_tayang`
+--
+ALTER TABLE `film_tayang`
+  MODIFY `id_film_tayang` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `aktor`
+--
+ALTER TABLE `aktor`
+  ADD CONSTRAINT `aktor_ibfk_1` FOREIGN KEY (`id_film`) REFERENCES `film` (`id_film`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `film_favorite`
+--
+ALTER TABLE `film_favorite`
+  ADD CONSTRAINT `film_favorite_ibfk_1` FOREIGN KEY (`id_film`) REFERENCES `film` (`id_film`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `film_mendatang`
+--
+ALTER TABLE `film_mendatang`
+  ADD CONSTRAINT `film_mendatang_ibfk_1` FOREIGN KEY (`id_film`) REFERENCES `film` (`id_film`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `film_tayang`
+--
+ALTER TABLE `film_tayang`
+  ADD CONSTRAINT `film_tayang_ibfk_1` FOREIGN KEY (`id_film`) REFERENCES `film` (`id_film`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
