@@ -101,8 +101,8 @@
 		</div>
 	</div>
 
-	<div class="container mt-4">
-				<h4>Aktor</h4>
+
+		<h4 class="ml-3 mt-3">Aktor</h4>
 		<div class="row">
 			<div class="col-md-8">
 		
@@ -150,26 +150,43 @@
 					</div>
 
 					<div class="mt-2">
-						<strong>Status</strong>
+						<strong>Bahasa Ucapan</strong>
+						<br/>
+						<?php echo $listfilm[0]['bahasa'];?>	
 						
 					</div>
-					
 
-
-					
-
-					<?php
+					<div class="mt-2">
+						<strong>Anggaran</strong>
+						<br/>
+						<?php
 						$number = $listfilm[0]['anggaran'];
 						$anggaran = '$ '.number_format(($number/100),2);
 
 						echo $anggaran;
-					?>
+						?>	
+						
+					</div>
+
+					<div class="mt-2">
+						<strong>Pemasukan</strong>
+						<br/>
+						<?php
+						$number = $listfilm[0]['pemasukan'];
+						$anggaran = '$ '.number_format(($number/100),2);
+
+						echo $anggaran;
+						?>	
+						
+					</div>
+			
+					
 				</div>
 				
 			</div>
 		</div>
 		
-	</div>
+
 
 
 							
