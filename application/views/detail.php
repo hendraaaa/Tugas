@@ -102,9 +102,10 @@
 	</div>
 
 	<div class="container mt-4">
-		<h4>Aktor</h4>
+				<h4>Aktor</h4>
 		<div class="row">
 			<div class="col-md-8">
+		
 				<div class="wrapper">
 					<?php
 						foreach ($listaktor as $row) {
@@ -128,6 +129,43 @@
 					
 				</div>
 					
+			</div>
+			<div class="col-md-4">
+				<div class="row">
+					<div class="col-2">
+						<img src="https://img.icons8.com/fluent/50/000000/facebook-new.png" style="width: 35px;" />
+					</div>
+					<div class="col-2">
+						<img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" style="width: 35px;"/>
+					</div>
+					<div class="col-2">
+						<img src="https://img.icons8.com/fluent/48/000000/twitter.png" style="width: 35px;"/>
+					</div>
+				</div>
+				<div class="mt-3">
+					<div>
+						<strong>Status</strong>
+						<br/>
+						<?php echo $listfilm[0]['stts'];?>	
+					</div>
+
+					<div class="mt-2">
+						<strong>Status</strong>
+						
+					</div>
+					
+
+
+					
+
+					<?php
+						$number = $listfilm[0]['anggaran'];
+						$anggaran = '$ '.number_format(($number/100),2);
+
+						echo $anggaran;
+					?>
+				</div>
+				
 			</div>
 		</div>
 		
