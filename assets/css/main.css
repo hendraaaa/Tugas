@@ -57,3 +57,35 @@ height: 16px;
   padding: 0px; 
   -webkit-appearance: none;
 }
+
+.col-md-8 .chart{
+ font: bold 15px Arial !important; 
+ width: 29px;
+height: 16px;
+  position: absolute; 
+  vertical-align: middle; 
+  margin-top: 16px; 
+  margin-left: -39px; 
+  border: 0px; 
+  background: none; 
+  text-align: center; 
+  color: white !important;
+  padding: 0px; 
+  -webkit-appearance: none;
+}
+.background{
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+
+ 
+}
+.wrapper{
+  display: flex;
+  overflow-x: auto;
+}
+
+.wrapper .item{
+  min-width: 140px; 
+  margin-right: 20px;
+}
