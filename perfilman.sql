@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2020 at 04:45 AM
+-- Generation Time: Jun 17, 2020 at 03:53 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -208,6 +208,22 @@ CREATE TABLE `film_favorite` (
   `id_film` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `film_favorite`
+--
+
+INSERT INTO `film_favorite` (`id_film_favorite`, `id_film`) VALUES
+(1, 2),
+(4, 4),
+(8, 10),
+(5, 12),
+(2, 13),
+(6, 15),
+(9, 16),
+(7, 18),
+(10, 20),
+(3, 23);
+
 -- --------------------------------------------------------
 
 --
@@ -288,7 +304,7 @@ ALTER TABLE `film`
 -- AUTO_INCREMENT for table `film_favorite`
 --
 ALTER TABLE `film_favorite`
-  MODIFY `id_film_favorite` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_film_favorite` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `film_mendatang`
