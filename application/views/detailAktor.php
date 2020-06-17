@@ -60,131 +60,102 @@
 		</nav>
 
 		
-	<div class="background b mt-4" style="background-image:linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.6)), url('<?php echo base_url().'foto/'.$listfilm[0]['bg-image'];?>');">
+	
 
 		<div class="row">
 		   <div class="col-md-3">
-		   	<img class="img-fluid ml-3 mt-3 mb-3" src="<?php echo base_url().'foto/'.$listfilm[0]['poster_film']?>">
+		   		<img class="img-fluid ml-3 mt-3 mb-3" src="<?php echo base_url().'foto/'.$listaktor[0]['foto']?>">
+		   		<div class="row">
+					<div class="col-md-12 ml-2">
+						<div class="row">
+							<div class="col-2">
+								<img src="https://img.icons8.com/fluent/50/000000/facebook-new.png" style="width: 35px;" />
+							</div>
+							<div class="col-2">
+								<img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" style="width: 35px;"/>
+							</div>
+							<div class="col-2">
+								<img src="https://img.icons8.com/fluent/48/000000/twitter.png" style="width: 35px;"/>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="mt-3 ml-3">
+					<div>
+						<strong>Peran</strong>
+						<br/>
+						<?php echo $listaktor[0]['peran']; ?>
+						
+					</div>
+
+					<div class="mt-2">
+						<strong>Jenis Kelamin</strong>
+						<br/>
+						<?php echo $listaktor[0]['jenis_kl']; ?>
+					
+						
+					</div>
+
+					<div class="mt-2">
+						<strong>Kelahiran</strong>
+						<br/>
+						<?php echo $listaktor[0]['tgl_lahir'].' ('.$listaktor[0]['umur'].') '.'tahun' ?>
+						
+						
+					</div>
+
+			
+					
+				</div>
 		   </div>
 		   <div class="col-md-8 mt-3 ml-4">
-		   	<h3><b><?php echo $listfilm[0]['namaFilm']?></b></h3>
-		   	 <div class="row">
-		   	 	<div class="col-md-8">
-		   	 		<?php echo $listfilm[0]['tgl_rilis']." <b>.</b>"?>
-		   	 		<?php echo $listfilm[0]['genre']." <b>.</b>"?>
-		   	 		<?php echo $listfilm[0]['durasi']?>
-		   	 	</div>
-		   	 	
-		   	 </div>
-		   	 <div class="row mt-4">
-		   	 	<div class="col-md-8">
-		   	 		<input type="text" class="knob chart" value="<?php echo $listfilm[0]['rating']?>" data-skin="tron" data-thickness="0.2" data-width="60" data-height="60" data-fgcolor="#a6f87e" data-readonly="true" readonly="readonly">
-		   	 	</div>
-		   	 	
-		   	 </div>
+		   		<h3><b><?php echo $listaktor[0]['nama']?></b></h3>
+		   	
+		   		<div class="row mt-4">
+					<div class="col-md-12">
+						<strong>Biografi</strong>
+						<p class="font-weight-light text-justify"><?php echo $listaktor[0]['biografu']?></p>
 
-		   	 <div class="row mt-4">
-		   	 	<div class="col-md-8">
-		   	 		<h5>Kilasan Singkat</h5>
-		   	 	</div>
-		   	 	
-		   	 </div>
-		   	 <div class="row">
-		   	 	
-		   	 	<div class="col justify-center">
+					</div> 	
+				</div>
 
-		   	 		<p class="font-weight-light text-justify"><?php echo $listfilm[0]['overview']?></p>
-		   	 	</div>
-		   	 	
-		   	 </div>
-		   </div>	   	
-		</div>
-	</div>
+				<div class="row mt-4">
+					<div class="col-md-5">
+						<h5>Peran</h5>
+						<div class="wrapper">
+							<?php
+								foreach ($listperan as $row) {
+									echo '
+										<div class="card item mt-3 ml-3 mb-3" style="width: 13rem;">
+								
+											<a href="'.base_url().'detail/film/'.$row['id_film'].'"><img src="'.base_url().'foto/'.$row['poster_film'].'" style="width: 100%;"style="width: 100%;"></a>
+										
+											<div class="card-body">
+												<p class="card-text"><b>'.$row['namaFilm'].'</b></p>
+											</div>
+										</div>
 
 
-		<h4 class="ml-3 mt-3">Aktor</h4>
-		<div class="row">
-			<div class="col-md-8">
-		
-				<div class="wrapper">
-					<?php
-						foreach ($listaktor as $row) {
-							echo '
-								<div class="card item mt-3 ml-3 mb-3" style="width: 13rem;">
-						
-									<a href="'.base_url().'DetailAktor/aktor/'.$row['id_aktor'].'?nama='.$row['nama'].'"><img src="'.base_url().'foto/'.$row['foto'].'" style="width: 100%;"style="width: 100%;"></a>
-								  
-									 <div class="card-body">
-										<p class="card-text"><b>'.$row['nama'].'</b></p>
-									</div>
-								</div>
-
-
-							';
-						}
-					?>
+									';
+								}
+							?>
 					
 					
 	
 					
-				</div>
-					
-			</div>
-			<div class="col-md-4">
-				<div class="row">
-					<div class="col-2">
-						<img src="https://img.icons8.com/fluent/50/000000/facebook-new.png" style="width: 35px;" />
+						</div>
 					</div>
-					<div class="col-2">
-						<img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" style="width: 35px;"/>
-					</div>
-					<div class="col-2">
-						<img src="https://img.icons8.com/fluent/48/000000/twitter.png" style="width: 35px;"/>
-					</div>
-				</div>
-				<div class="mt-3">
-					<div>
-						<strong>Status</strong>
-						<br/>
-						<?php echo $listfilm[0]['stts'];?>	
-					</div>
-
-					<div class="mt-2">
-						<strong>Bahasa Ucapan</strong>
-						<br/>
-						<?php echo $listfilm[0]['bahasa'];?>	
-						
-					</div>
-
-					<div class="mt-2">
-						<strong>Anggaran</strong>
-						<br/>
-						<?php
-						$number = $listfilm[0]['anggaran'];
-						$anggaran = '$ '.number_format(($number/100),2);
-
-						echo $anggaran;
-						?>	
-						
-					</div>
-
-					<div class="mt-2">
-						<strong>Pemasukan</strong>
-						<br/>
-						<?php
-						$number = $listfilm[0]['pemasukan'];
-						$anggaran = '$ '.number_format(($number/100),2);
-
-						echo $anggaran;
-						?>	
-						
-					</div>
-			
 					
 				</div>
-				
-			</div>
+		
+			</div>	   	
 		</div>
+
+		
+	
+
+
+		
 		
 
 
