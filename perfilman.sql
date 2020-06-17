@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 17, 2020 at 03:53 AM
+-- Generation Time: Jun 17, 2020 at 11:10 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -235,6 +235,22 @@ CREATE TABLE `film_mendatang` (
   `id_film` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `film_mendatang`
+--
+
+INSERT INTO `film_mendatang` (`id_film_mendatang`, `id_film`) VALUES
+(1, 6),
+(2, 8),
+(3, 9),
+(8, 15),
+(7, 17),
+(10, 20),
+(9, 22),
+(6, 24),
+(5, 25),
+(4, 26);
+
 -- --------------------------------------------------------
 
 --
@@ -245,6 +261,22 @@ CREATE TABLE `film_tayang` (
   `id_film_tayang` int(11) NOT NULL,
   `id_film` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `film_tayang`
+--
+
+INSERT INTO `film_tayang` (`id_film_tayang`, `id_film`) VALUES
+(6, 3),
+(9, 4),
+(7, 5),
+(8, 7),
+(10, 11),
+(1, 14),
+(2, 18),
+(3, 19),
+(4, 21),
+(5, 23);
 
 --
 -- Indexes for dumped tables
@@ -310,13 +342,13 @@ ALTER TABLE `film_favorite`
 -- AUTO_INCREMENT for table `film_mendatang`
 --
 ALTER TABLE `film_mendatang`
-  MODIFY `id_film_mendatang` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_film_mendatang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `film_tayang`
 --
 ALTER TABLE `film_tayang`
-  MODIFY `id_film_tayang` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_film_tayang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables
