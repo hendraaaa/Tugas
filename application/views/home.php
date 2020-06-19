@@ -72,16 +72,29 @@
 		      </li>
 		      
 		    </ul>
-		    <form class="form-inline my-2 my-lg-0">
-		      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-		      <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+		    <form class="form-inline my-2 my-lg-0" method="post" action="<?php echo base_url().'home/cari'?>">
+		    	 	<input class="form-control mr-sm-2" name="keywoard" type="text" placeholder="Search" aria-label="Search">
+		      		<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+		    	
+		     
 		    </form>
 		  </div>
-		</nav>
+	</nav>
 
 		<div class="container mt-3">
-			<div class="row">
+			<div class="row justify-content-center">
 				<?php
+				if (!$listfilm) {
+					echo '
+						<div class="text-center">
+								<img src="'.base_url().'foto/not_found.png" class="img-fluid" alt="Responsive image" style="width:20rem;">
+								<p class="text-secondary">Pencarian "'.$not.'" Tidak di temukan</p>
+			
+						</div>
+						
+
+					';
+				}else{
 					foreach ($listfilm as $row) {
 						echo '
 
@@ -106,6 +119,9 @@
 
 						';
 					}
+
+				}
+					
 
 				?>
 

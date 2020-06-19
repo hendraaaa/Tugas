@@ -14,4 +14,21 @@ class Home extends CI_Controller {
 		//var_dump($data);die;
 		$this->load->view('home',$data);
 	}
+	public function cari()
+	{
+		$this->load->helper('url');
+		$this->load->helper('form');
+		$keywoard = $this->input->post('keywoard');
+		$this->load->model('Search_model');
+		$data['listfilm'] = $this->Search_model->get_keywoard($keywoard);
+		$data['not'] = $keywoard;
+		
+
+			
+		$this->load->view('home',$data);
+		
+		
+		
+		
+	}
 }

@@ -77,6 +77,7 @@ $autoload['libraries'] = array();
 | the controller:
 |
 |	$autoload['drivers'] = array('cache' => 'cch');
+
 |
 */
 $autoload['drivers'] = array();
@@ -89,7 +90,7 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array();
+$autoload['helper'] = array('form');
 
 /*
 | -------------------------------------------------------------------
