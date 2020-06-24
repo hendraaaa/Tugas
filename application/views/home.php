@@ -42,7 +42,7 @@
 		          Movie
 		        </a>
 		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-		          <a class="dropdown-item" href="#">Action</a>
+		          <a class="dropdown-item" href="application\views\favorite.php">Action</a>
 		          <a class="dropdown-item" href="#">Another action</a>
 		          <div class="dropdown-divider"></div>
 		          <a class="dropdown-item" href="#">Something else here</a>
@@ -98,7 +98,7 @@
 					foreach ($listfilm as $row) {
 						echo '
 
-						<div class="col-lg-3 col-sm-12 col-md-4 mb-5">
+						<div class="col-lg-3 col-sm-6 col-md-4 mb-5">
 							<div class="card" style="width: 13rem;">
 						
 								<a href="'.base_url().'detail/film/'.$row['id_film'].'"><img src="'.base_url().'/foto/'.$row['poster_film'].'"style="width: 100%;"></a>
