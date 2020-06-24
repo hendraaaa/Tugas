@@ -22,17 +22,18 @@
 	left: 10px;
 	color: white;
 }
-.background {
-	background-color: grey;
-	opacity: 0.9;
-}
 .oke {
 	position: absolute;
 	top: 9px;
 	left: 45px;
 }
-.b {
+.background-image{
 	color: white;
+	background-size: cover;
+
+	background-position: center !important;
+	background-repeat: no-repeat !important;
+
 }
 .chart {
 	font: bold 15px Arial !important;
@@ -65,11 +66,7 @@
 	padding: 0px;
 	-webkit-appearance: none;
 }
-.background {
-	background-size: cover;
-	background-attachment: fixed;
-	background-position: center;
-}
+
 .wrapper {
 	display: flex;
 	overflow-x: auto;

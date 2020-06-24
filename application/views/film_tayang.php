@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>home</title>
+	<title>film Tayang</title>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/main.css">
 
@@ -42,12 +42,12 @@
 		          Movie
 		        </a>
 		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-		        	<a class="dropdown-item active" href="<?php echo base_url().'home'?>">Film</a>
-			        <a class="dropdown-item" href="<?php echo base_url().'home/favorite'?>">Favorite</a>
-			        <a class="dropdown-item" href="<?php echo base_url().'home/tayang'?>">Tayang</a>
-			        <a class="dropdown-item" href="<?php echo base_url().'home/mendatang'?>">Mendatang</a>
+		          <a class="dropdown-item" href="<?php echo base_url().'home'?>">Film</a>
+			      <a class="dropdown-item" href="<?php echo base_url().'home/favorite'?>">Favorite</a>
+		          <a class="dropdown-item active" href="<?php echo base_url().'home/tayang'?>">Tayang</a>
+			      <a class="dropdown-item" href="<?php echo base_url().'home/mendatang'?>">Mendatang</a>
 
-			       
+		        </div>
 		      </li>
 		     
 		      <li class="nav-item dropdown">
@@ -63,7 +63,7 @@
 		      </li>
 		      
 		    </ul>
-		    <form class="form-inline my-2 my-lg-0" method="post" action="<?php echo base_url().'home/cari'?>">
+		    <form class="form-inline my-2 my-lg-0" method="post" action="<?php echo base_url().'home/caritayang'?>">
 		    	 	<input class="form-control mr-sm-2" name="keywoard" type="text" placeholder="Search" aria-label="Search">
 		      		<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
 		    	

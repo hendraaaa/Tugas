@@ -52,15 +52,11 @@
 		      </li>
 		      
 		    </ul>
-		    <form class="form-inline my-2 my-lg-0">
-		      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-		      <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
-		    </form>
 		  </div>
 		</nav>
 
 		
-	<div class="background b mt-4" style="background-image:linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.6)), url('<?php echo base_url().'foto/'.$listfilm[0]['bg-image'];?>');">
+	<div class="background-image mt-4" style="background-image:linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.6)), url('<?php echo base_url().'foto/'.$listfilm[0]['bg-image'];?>');">
 
 		<div class="row">
 		   <div class="col-md-3">
