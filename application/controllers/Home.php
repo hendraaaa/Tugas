@@ -103,4 +103,5 @@ class Home extends CI_Controller {
 		$this->load->view('film_mendatang',$data);		
 		
 	}
+	
 }

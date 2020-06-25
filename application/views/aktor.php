@@ -47,16 +47,15 @@
 			        <a class="dropdown-item" href="<?php echo base_url().'home/tayang'?>">Tayang</a>
 			        <a class="dropdown-item" href="<?php echo base_url().'home/mendatang'?>">Mendatang</a>
 
-
 			       
 		      </li>
 		     
 		      <li class="nav-item dropdown">
 		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		          People
+		          Dropdown
 		        </a>
 		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-		          <a class="dropdown-item" href="<?php echo base_url().'aktor/dataaktor'?>">Aktor</a>
+		          <a class="dropdown-item" href="#">Action</a>
 		          <a class="dropdown-item" href="#">Another action</a>
 		          <div class="dropdown-divider"></div>
 		          <a class="dropdown-item" href="#">Something else here</a>
@@ -64,7 +63,7 @@
 		      </li>
 		      
 		    </ul>
-		    <form class="form-inline my-2 my-lg-0" method="post" action="<?php echo base_url().'home/cari'?>">
+		    <form class="form-inline my-2 my-lg-0" method="post" action="<?php echo base_url().'home/cariaktor'?>">
 		    	 	<input class="form-control mr-sm-2" name="keywoard" type="text" placeholder="Search" aria-label="Search">
 		      		<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
 		    	
@@ -76,7 +75,7 @@
 		<div class="container mt-3">
 			<div class="row justify-content-center">
 				<?php
-				if (!$listfilm) {
+				if (!$listaktor) {
 					echo '
 						<div class="text-center">
 								<img src="'.base_url().'foto/not_found.png" class="img-fluid" alt="Responsive image" style="width:20rem;">
@@ -87,23 +86,20 @@
 
 					';
 				}else{
-					foreach ($listfilm as $row) {
+					foreach ($listaktor as $row) {
 						echo '
 
 						<div class="col-lg-3 col-sm-6 col-md-4 mb-5">
 							<div class="card" style="width: 13rem;">
 						
-								<a href="'.base_url().'detail/film/'.$row['id_film'].'"><img src="'.base_url().'/foto/'.$row['poster_film'].'"style="width: 100%;"></a>
+								<a href="'.base_url().'DetailAktor/aktor/'.$row['id_aktor'].'?nama='.$row['nama'].'"><img src="'.base_url().'foto/'.$row['foto'].'" style="width: 100%;"style="width: 100%;"></a>
 								<div class="top-left" style="margin-left: -30px">
-
-									<input type="text" class="knob chart" value="'.$row['rating'].'" data-skin="tron" data-thickness="0.2" data-width="60" data-height="60" data-fgcolor="#13506b" data-readonly="true" readonly="readonly">
 									
 									
 								</div>
 					  
 							  <div class="card-body">
-							    <p class="card-text"><b>'.$row['namaFilm'].'</b></p>
-							    <p class="card-text" style="margin-top: -15px;">'.$row['tgl_rilis'].'</p>
+							    <p class="card-text"><b>'.$row['nama'].'</b></p>
 							  </div>
 							</div>
 					
