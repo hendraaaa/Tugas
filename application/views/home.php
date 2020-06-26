@@ -28,19 +28,20 @@
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		  <a class="navbar-brand" href="#">Navbar</a>
+		 <img width="50px" src="<?php echo base_url().'foto/logo.svg'?>">
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  </button>
 
 		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-		    <ul class="navbar-nav mr-auto">
+		    <ul class="navbar-nav mr-auto ml-3">
 		      
 		     
 		      <li class="nav-item dropdown">
 		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		          Movie
 		        </a>
+
 		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 		        	<a class="dropdown-item active" href="<?php echo base_url().'home'?>">Film</a>
 			        <a class="dropdown-item" href="<?php echo base_url().'home/favorite'?>">Favorite</a>
@@ -55,20 +56,21 @@
 		          Dropdown
 		        </a>
 		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-		          <a class="dropdown-item" href="#">Action</a>
+		          <a class="dropdown-item" >Action</a>
 		          <a class="dropdown-item" href="#">Another action</a>
 		          <div class="dropdown-divider"></div>
 		          <a class="dropdown-item" href="#">Something else here</a>
 		        </div>
 		      </li>
 		      
-		    </ul>
+		    </ul>  
 		    <form class="form-inline my-2 my-lg-0" method="post" action="<?php echo base_url().'home/cari'?>">
 		    	 	<input class="form-control mr-sm-2" name="keywoard" type="text" placeholder="Search" aria-label="Search">
 		      		<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
 		    	
 		     
 		    </form>
+		   <a class="nav-item nav-link" href="login" data-toggle="modal" data-target="#exampleModal">Login</a>
 		  </div>
 	</nav>
 
@@ -119,8 +121,41 @@
 				
 				
 			</div>
+			<!-- Dialog -->
+			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h4 class="modal-title" id="exampleModalLabel">Login</h4>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			      </div>
+			       <form method="post" action="<?php echo base_url().'Login/loginn'?>">
+				      <div class="modal-body">
+				       
+				          <div class="form-group">
+				            <label for="recipient-name" class="col-form-label">Username</label>
+				            <input type="text" class="form-control" id="recipient-name" name="username">
+				          </div>
+				          <div class="form-group">
+				            <label for="message-text" class="col-form-label">password</label>
+				            <input type="password" class="form-control" id="recipient-name" name="password">
+				          </div>
+				       
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				        <button type="submit" class="btn btn-primary">Login</button>
+				      </div>
+			  		</form>
+			    </div>
+			  </div>
+			</div>
 			
 		</div>
+
+		
 
 	
          
@@ -134,7 +169,7 @@
 	<script src="<?php echo base_url();?>assets/js/jquery-3.5.1.slim.js"></script>
 	<script src="<?php echo base_url();?>assets/js/popper.js"></script>
 	<script src="<?php echo base_url();?>assets/js/bootstrap.js"></script>
-	<script src="<?php echo base_url();?>assets/css/jquery/dist/jquery.min.js"></script>
+	
 	<!-- Bootstrap 3.3.7 -->
 	<script src="<?php echo base_url();?>assets/css/bootstrap/dist/js/bootstrap.min.js"></script>
 	<!-- SlimScroll -->
