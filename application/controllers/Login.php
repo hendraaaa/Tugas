@@ -23,6 +23,7 @@ class Login extends CI_Controller {
 
 	
 		$data = $this->Login_model->verifikasi($username);
+		$data = $this->Login_model->verifikasi($password);
 		
 
 		if (empty($data)) {
