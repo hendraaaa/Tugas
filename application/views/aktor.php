@@ -28,61 +28,54 @@
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		 <img width="50px" src="<?php echo base_url().'foto/logo.svg'?>">
+		  <a class="navbar-brand" href="#">Navbar</a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  </button>
 
 		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-		    <ul class="navbar-nav mr-auto ml-3">
+		    <ul class="navbar-nav mr-auto">
 		      
 		     
 		      <li class="nav-item dropdown">
 		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		          Movie
 		        </a>
-
 		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 		        	<a class="dropdown-item active" href="<?php echo base_url().'home'?>">Film</a>
 			        <a class="dropdown-item" href="<?php echo base_url().'home/favorite'?>">Favorite</a>
 			        <a class="dropdown-item" href="<?php echo base_url().'home/tayang'?>">Tayang</a>
 			        <a class="dropdown-item" href="<?php echo base_url().'home/mendatang'?>">Mendatang</a>
 
-
 			       
 		      </li>
 		     
 		      <li class="nav-item dropdown">
 		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		          People
+		          Dropdown
 		        </a>
 		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-<<<<<<< HEAD
-		          <a class="dropdown-item" >Action</a>
-=======
-		          <a class="dropdown-item" href="<?php echo base_url().'aktor/dataaktor'?>">Aktor</a>
->>>>>>> 6e5fbf39f6a0da2c9014982f0d095ab1265d0145
+		          <a class="dropdown-item" href="#">Action</a>
 		          <a class="dropdown-item" href="#">Another action</a>
 		          <div class="dropdown-divider"></div>
 		          <a class="dropdown-item" href="#">Something else here</a>
 		        </div>
 		      </li>
 		      
-		    </ul>  
-		    <form class="form-inline my-2 my-lg-0" method="post" action="<?php echo base_url().'home/cari'?>">
+		    </ul>
+		    <form class="form-inline my-2 my-lg-0" method="post" action="<?php echo base_url().'home/cariaktor'?>">
 		    	 	<input class="form-control mr-sm-2" name="keywoard" type="text" placeholder="Search" aria-label="Search">
 		      		<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
 		    	
 		     
 		    </form>
-		   <a class="nav-item nav-link" href="login" data-toggle="modal" data-target="#exampleModal">Login</a>
 		  </div>
 	</nav>
 
 		<div class="container mt-3">
 			<div class="row justify-content-center">
 				<?php
-				if (!$listfilm) {
+				if (!$listaktor) {
 					echo '
 						<div class="text-center">
 								<img src="'.base_url().'foto/not_found.png" class="img-fluid" alt="Responsive image" style="width:20rem;">
@@ -93,23 +86,20 @@
 
 					';
 				}else{
-					foreach ($listfilm as $row) {
+					foreach ($listaktor as $row) {
 						echo '
 
 						<div class="col-lg-3 col-sm-6 col-md-4 mb-5">
 							<div class="card" style="width: 13rem;">
 						
-								<a href="'.base_url().'detail/film/'.$row['id_film'].'"><img src="'.base_url().'/foto/'.$row['poster_film'].'"style="width: 100%;"></a>
+								<a href="'.base_url().'DetailAktor/aktor/'.$row['id_aktor'].'?nama='.$row['nama'].'"><img src="'.base_url().'foto/'.$row['foto'].'" style="width: 100%;"style="width: 100%;"></a>
 								<div class="top-left" style="margin-left: -30px">
-
-									<input type="text" class="knob chart" value="'.$row['rating'].'" data-skin="tron" data-thickness="0.2" data-width="60" data-height="60" data-fgcolor="#13506b" data-readonly="true" readonly="readonly">
 									
 									
 								</div>
 					  
 							  <div class="card-body">
-							    <p class="card-text"><b>'.$row['namaFilm'].'</b></p>
-							    <p class="card-text" style="margin-top: -15px;">'.$row['tgl_rilis'].'</p>
+							    <p class="card-text"><b>'.$row['nama'].'</b></p>
 							  </div>
 							</div>
 					
@@ -126,41 +116,8 @@
 				
 				
 			</div>
-			<!-- Dialog -->
-			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			  <div class="modal-dialog" role="document">
-			    <div class="modal-content">
-			      <div class="modal-header">
-			        <h4 class="modal-title" id="exampleModalLabel">Login</h4>
-			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			          <span aria-hidden="true">&times;</span>
-			        </button>
-			      </div>
-			       <form method="post" action="<?php echo base_url().'Login/loginn'?>">
-				      <div class="modal-body">
-				       
-				          <div class="form-group">
-				            <label for="recipient-name" class="col-form-label">Username</label>
-				            <input type="text" class="form-control" id="recipient-name" name="username">
-				          </div>
-				          <div class="form-group">
-				            <label for="message-text" class="col-form-label">password</label>
-				            <input type="password" class="form-control" id="recipient-name" name="password">
-				          </div>
-				       
-				      </div>
-				      <div class="modal-footer">
-				        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				        <button type="submit" class="btn btn-primary">Login</button>
-				      </div>
-			  		</form>
-			    </div>
-			  </div>
-			</div>
 			
 		</div>
-
-		
 
 	
          
@@ -174,7 +131,7 @@
 	<script src="<?php echo base_url();?>assets/js/jquery-3.5.1.slim.js"></script>
 	<script src="<?php echo base_url();?>assets/js/popper.js"></script>
 	<script src="<?php echo base_url();?>assets/js/bootstrap.js"></script>
-	
+	<script src="<?php echo base_url();?>assets/css/jquery/dist/jquery.min.js"></script>
 	<!-- Bootstrap 3.3.7 -->
 	<script src="<?php echo base_url();?>assets/css/bootstrap/dist/js/bootstrap.min.js"></script>
 	<!-- SlimScroll -->
