@@ -20,8 +20,5 @@ class SearchAktor_model extends CI_Model
 		
 		return $data;
 
-		
-
-
-		
 	}
+}

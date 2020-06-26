@@ -63,7 +63,7 @@
 		      </li>
 		      
 		    </ul>
-		    <form class="form-inline my-2 my-lg-0" method="post" action="<?php echo base_url().'home/cariaktor'?>">
+		    <form class="form-inline my-2 my-lg-0" method="post" action="<?php echo base_url().'aktor/cariaktor'?>">
 		    	 	<input class="form-control mr-sm-2" name="keywoard" type="text" placeholder="Search" aria-label="Search">
 		      		<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
 		    	
