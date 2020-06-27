@@ -5,7 +5,7 @@
 class Login_model extends CI_Model
 {
 	
-	public function verifikasi($username, $password)
+	public function verifikasi($username $password)
 	{
 		$this->load->database();
 
