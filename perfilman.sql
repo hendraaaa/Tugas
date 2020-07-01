@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 01, 2020 at 02:14 PM
+-- Generation Time: Jul 01, 2020 at 02:26 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -40,7 +40,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id_admin`, `username`, `password`, `foto`) VALUES
-(1, 'hendra', '1234', 'foto-hendra.png');
+(1, 'hendra12', '12345678', 'foto-hendra.png');
 
 -- --------------------------------------------------------
 
