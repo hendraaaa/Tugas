@@ -57,11 +57,10 @@
 		          People
 		        </a>
 		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-<<<<<<< HEAD
+
 		          <a class="dropdown-item" >Action</a>
-=======
+
 		          <a class="dropdown-item" href="<?php echo base_url().'aktor/dataaktor'?>">Aktor</a>
->>>>>>> 6e5fbf39f6a0da2c9014982f0d095ab1265d0145
 		          <a class="dropdown-item" href="#">Another action</a>
 		          <div class="dropdown-divider"></div>
 		          <a class="dropdown-item" href="#">Something else here</a>
