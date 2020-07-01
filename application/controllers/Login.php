@@ -16,7 +16,8 @@ class Login extends CI_Controller {
 		$this->load->model('Login_model');
 
 
-		$username = $this->input->post('username', 'password');
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
 
 
 
@@ -30,7 +31,7 @@ class Login extends CI_Controller {
 		
 
 		}		
-		elseif ($username == $data->username) {
+		elseif ($username == $data->username && $password == $data->password) {
 			echo "berhasil";
 		}
 			
