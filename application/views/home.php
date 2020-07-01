@@ -28,7 +28,7 @@
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		 <img width="50px" src="<?php echo base_url().'foto/logo.svg'?>">
+		 <a class="navbar-brand" href="<?php echo base_url().'home'?>"><img width="50px" src="<?php echo base_url().'foto/logo.svg'?>"></a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  </button>
@@ -57,11 +57,7 @@
 		          People
 		        </a>
 		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-		          <a class="dropdown-item" >Action</a>
 		          <a class="dropdown-item" href="<?php echo base_url().'aktor/dataaktor'?>">Aktor</a>
-		          <a class="dropdown-item" href="#">Another action</a>
-		          <div class="dropdown-divider"></div>
-		          <a class="dropdown-item" href="#">Something else here</a>
 		        </div>
 		      </li>
 		      
