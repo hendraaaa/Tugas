@@ -16,13 +16,12 @@ class Login extends CI_Controller {
 		$this->load->model('Login_model');
 
 
-		$username = $this->input->post('username');
-		$password = $this->input->post('password');
+		$username = $this->input->post('username', 'password');
 
 
 
 	
-		$data = $this->Login_model->verifikasi($username);
+		$data = $this->Login_model->verifikasi($username, $password);
 		
 
 		if (empty($data)) {
