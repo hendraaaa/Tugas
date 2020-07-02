@@ -7,9 +7,11 @@ class Admin extends CI_Controller {
 	{
 		$this->load->helper('url');
 
+		$this->load->model('Home_model');
+
+		$data['listfilm'] = $this->Home_model->datafilm();
+		$data['halaman'] = 'admin/pages/index';
 		
-		//var_dump($data);die;
-		$this->load->view('admin');
-	}
-	
+		$this->load->view('admin',$data);
+	}	
 }

@@ -4,10 +4,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Login extends CI_Controller {
 
 	public function index(){
-		
+
 		$this->load->helper('url');
 		if($this->session->userdata('authenticated')){
-		 $this->load->view('admin');
+		 redirect('admin');
 			
 
 		}else{
