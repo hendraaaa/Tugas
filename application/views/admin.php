@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <?php 
-    $this->load->view('admin/layout/header');
-
-  ?>
+   <?php
+          $this->load->view('admin/layout/header');
+     ?>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -397,9 +396,10 @@
       <!-- table -->
 
        <div class="row">
-       <?php
-        $this->load->view($halaman)
-       ?>
+
+        <?php
+          $this->load->view($halaman);
+        ?>
       </div>
     </section>
 
@@ -608,8 +608,8 @@
        immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
 </div>
-  <?php
-        $this->load->view('admin/layout/footer');
-  ?>
+ <?php
+          $this->load->view('admin/layout/footer');
+     ?>
 </body>
 </html>

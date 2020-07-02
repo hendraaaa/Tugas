@@ -22,6 +22,7 @@
                   <th>Durasi</th>
                   <th>Tanggal Rilis</th>
                   <th>Bahasa</th>
+                  <th>Foto</th>
 
                 </tr>
                 </thead>
