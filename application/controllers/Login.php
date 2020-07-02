@@ -4,7 +4,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Login extends CI_Controller {
 
 	public function index(){
+		
+		$this->load->helper('url');
+		if($this->session->userdata('authenticated')){
+		 $this->load->view('admin');
+			
+
+		}else{
 		echo "<script>alert('Gagal Login!');history.go(-1);</script>";
+
+		 $this->load->view('home');
+
+		}
+     
+
 	}
 
 	
@@ -14,6 +27,7 @@ class Login extends CI_Controller {
 		$this->load->helper('url');
 
 		$this->load->model('Login_model');
+		
 
 
 		$username = $this->input->post('username');
@@ -26,17 +40,28 @@ class Login extends CI_Controller {
 		
 
 		if (empty($data)) {
-		//echo "<script>alert('same message');</script>";
-		redirect('Login');
+		
+			redirect('Login');
+
 		
 
 		}		
 		elseif ($username == $data->username && $password == $data->password) {
-			echo "berhasil";
-		}
-			
+			 $data = array(
+          	'authenticated'=>true,
+          	'username'=>$data->username
 
-		
-		
+         
+        );
+		$this->session->set_userdata($data);
+		redirect('login');
+				
 	}
+}
+public function logout(){
+		$this->load->helper('url');
+
+    $this->session->sess_destroy();
+    redirect('home');
+  }
 }

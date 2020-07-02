@@ -78,7 +78,23 @@
 		    	
 		     
 		    </form>
-		   <a class="nav-item nav-link" href="login" data-toggle="modal" data-target="#exampleModal">Login</a>
+		    <?php
+
+		    	if ($this->session->userdata('authenticated')) {
+					
+
+		    		echo '
+		  			 <a class="nav-item nav-link" href="'.base_url().'login">Login</a>';
+		    		
+		    	}else{
+		    		echo '
+		   				<a class="nav-item nav-link" href="login" data-toggle="modal" data-target="#exampleModal">Login</a>
+
+		    		';
+		    	}
+		    ?>
+		  
+
 		  </div>
 	</nav>
 
