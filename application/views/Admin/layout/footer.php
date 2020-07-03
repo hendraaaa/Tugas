@@ -40,6 +40,16 @@
 <!-- DataTables -->
 <script src="<?php echo base_url()?>assets/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="<?php echo base_url()?>assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="<?php echo base_url('assets/')?>bower_components/select2/dist/js/select2.full.min.js"></script>
+<!-- InputMask -->
+<script src="<?php echo base_url('assets/')?>plugins/input-mask/jquery.inputmask.js"></script>
+<script src="<?php echo base_url('assets/')?>plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+<script src="<?php echo base_url('assets/')?>plugins/input-mask/jquery.inputmask.extensions.js"></script>
+<script src="<?php echo base_url()?>assets/dist/js/jquery.maskMoney.js" type="text/javascript"></script>
+
+
+
+
 <script>
   $(function () {
     $('#example1').DataTable()
@@ -51,5 +61,31 @@
       'info'        : true,
       'autoWidth'   : false
     })
+  })
+</script>
+<script>
+  $(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2()
+
+    //Datemask dd/mm/yyyy
+    $('#datemask').inputmask('yyyy/mm/dd', { 'placeholder': 'yyyy/mm/dd' })
+    //Datemask2 mm/dd/yyyy
+  
+    //Money Euro
+    $('[data-mask]').inputmask()
+
+    //Date range picker
+    
+
+    //Date picker
+    
+
+   
+  })
+</script>
+<script>
+  $(function() {
+    $('.uang').maskMoney();
   })
 </script>

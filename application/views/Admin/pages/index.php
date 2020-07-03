@@ -6,9 +6,9 @@
             <div class="box-header">
               <h3 class="box-title">Data Table With Full Features</h3>
                  <div class="box-tools pull-right">
-                 <button class="btn btn-block btn-primary">
+                 <a href="<?php base_url()?>Admin/add" class="btn btn-block btn-primary">
                    <i class="glyphicon glyphicon-plus"></i> Film
-                 </button>
+                 </a>
               </div>
             </div>
             <!-- /.box-header -->

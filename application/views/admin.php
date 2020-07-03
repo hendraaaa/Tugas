@@ -610,6 +610,6 @@
 </div>
  <?php
           $this->load->view('admin/layout/footer');
-     ?>
+  ?>
 </body>
 </html>

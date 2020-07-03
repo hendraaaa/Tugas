@@ -13,5 +13,14 @@ class Admin extends CI_Controller {
 		$data['halaman'] = 'admin/pages/index';
 		
 		$this->load->view('admin',$data);
+	}
+	public function add()
+	{
+		$this->load->helper('url');
+
+	
+		$data['halaman'] = 'admin/pages/addfilm';
+		
+		$this->load->view('admin',$data);
 	}	
 }
