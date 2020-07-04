@@ -40,13 +40,9 @@
                   		<textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
 	                  	     		
 	             	</div>
-	             	<div class="form-group">
-		                <label for="exampleInputnama">Overview</label>
-                  		<textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
-	                  	     		
-	             	</div>
+	             	
 	             	 <div class="form-group">
-		                <label>Minimal</label>
+		                <label>Bahasa</label>
 		                <select class="form-control" style="width: 100%;">
 		                  <option selected="selected">Inggris</option>
 		                 
@@ -56,7 +52,7 @@
 		              </div>
 		             <div class="form-group">
 		                <label for="exampleInputnama">Anggaran</label>
-	                  	<input type="text" class="form-control uang" id="exampleInputEmail1" placeholder="Pemasukan">	           		
+	                  	<input type="text" class="form-control uang" id="exampleInputEmail1" placeholder="Anggaran">	           		
 	             	 </div>
 		             <div class="form-group">
 		                <label for="exampleInputnama">Pemasukan</label>
@@ -67,14 +63,15 @@
 		                  <input type="file" id="exampleInputFile">
                 	</div>
                 	<div class="form-group">
-		                  <label for="exampleInputFile">input Gamba Background</label>
+		                  <label for="exampleInputFile">input Gambar Background</label>
 		                  <input type="file" id="exampleInputFile">
                 	</div>
-	             	
-	             	
-            
-	             
 
+                	
+						
+                        <input type="submit" name="submit" value="Add">
+	             	
+	             	
 	             
 	        </div>
 	            <!-- /.box-body -->
