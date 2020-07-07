@@ -37,7 +37,6 @@
 	              </div>
 	               <div class="form-group">
 		                <label for="exampleInputnama">Overview</label>
-<<<<<<< HEAD
                   		<textarea class="form-control" rows="3" placeholder="Enter ..." name="overview"></textarea>
 	                  	     		
 	             	</div>
@@ -45,28 +44,18 @@
 	             	 <div class="form-group">
 		                <label>Bahasa</label>
 		                <select class="form-control" style="width: 100%;" name="bahasa">
-=======
+
                   		<textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
 	                  	     		
 	             	</div>
 	             	
-	             	 <div class="form-group">
-		                <label>Bahasa</label>
-		                <select class="form-control" style="width: 100%;">
->>>>>>> 55560d998dcc49b3f4afb607d888c6cf5bda3b03
-		                  <option selected="selected">Inggris</option>
-		                 
-		                  <option>Indonesia</option>
-		                  
-		                </select>
-		              </div>
+	             	
+		       
 		             <div class="form-group">
 		                <label for="exampleInputnama">Anggaran</label>
-<<<<<<< HEAD
+
 	                  	<input type="text" class="form-control uang" id="exampleInputEmail1" placeholder="Pemasukan" name="anggaran">	           		
-=======
-	                  	<input type="text" class="form-control uang" id="exampleInputEmail1" placeholder="Anggaran">	           		
->>>>>>> 55560d998dcc49b3f4afb607d888c6cf5bda3b03
+
 	             	 </div>
 		             <div class="form-group">
 		                <label for="exampleInputnama">Pemasukan</label>
@@ -78,7 +67,7 @@
                 	</div>
                 	<div class="form-group">
 		                  <label for="exampleInputFile">input Gambar Background</label>
-<<<<<<< HEAD
+
 		                  <input type="file" id="exampleInputFile" name="background">
                 	</div>
                 	 <div class="box-tools pull-right">
@@ -87,18 +76,14 @@
 		                 </button>
 		             </div>
 	             	
-	             	 	             	             
-=======
-		                  <input type="file" id="exampleInputFile">
-                	</div>
+		        
 
                 	
 						
-                        <input type="submit" name="submit" value="Add">
+                       
 	             	
 	             	
-	             
->>>>>>> 55560d998dcc49b3f4afb607d888c6cf5bda3b03
+
 	        </div>
 	            <!-- /.box-body -->
 	    </div>
