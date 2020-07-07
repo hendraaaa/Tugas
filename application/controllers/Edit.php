@@ -17,7 +17,8 @@ class Edit extends CI_Controller {
 		$data['detailfilm'] = $this->Edit_model->detailfilm($id_film);
 
 		// tampilan
-		$this->load->view('Admin/pages/edit', $data);
+		$data['halaman'] = ('admin/pages/edit');
+		$this->load->view('admin',$data);
 	}
 
 	public function aksi(){

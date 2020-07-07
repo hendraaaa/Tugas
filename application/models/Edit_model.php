@@ -26,6 +26,7 @@ class Edit_model extends CI_Model{
 
 		$id_film = $this->input->post('id_film');
 		$fotolama = $this->input->post('fotolama');
+		$bglama = $this->input->post('bglama');
 		$nama = $this->input->post('nama');
 		$rating = $this->input->post('rating');
 		$genre = $this->input->post('genre');
@@ -57,22 +58,22 @@ class Edit_model extends CI_Model{
 		$poster = $_FILES['poster']['name'];
 		$background = $_FILES['background']['name'];
 
-		
+	//  cek ganti gambar
+		if($poster){
 
+	//  hapus foto lama
+		unlink("foto/".$fotolama);
+		unlink("foto/".$bglama);
+
+	//  ganti gambar
 		$config['upload_path']			= './foto/';
 		$config['allowed_types']		= 'jpg|png';
 	//	$config['file_name']        	= $poster;
+		$config['remove_spaces'] 		= FALSE;
 
 		$this->load->library('upload', $config);
 
-		$this->upload->do_upload('background'); //hrus sesuai dengan nama d input
 		$this->upload->do_upload('poster'); //hrus sesuai dengan nama d input
-
-	
-		
-
-	
-		
 
 		$query = "UPDATE film SET namaFilm = '$nama',
 							rating = '$rating',
@@ -87,6 +88,72 @@ class Edit_model extends CI_Model{
 							pemasukan = '$pemasukan' 
 					WHERE 
 							id_film='$id_film'";
+
+		}else{
+		// tidak ganti gambar
+			$query = "UPDATE film SET namaFilm = '$nama',
+							rating = '$rating',
+							genre = '$genre',
+							durasi = '$durasi',
+							tgl_rilis = '$tanggal',
+							overview = '$overview',
+							bahasa = '$bahasa',
+							anggaran = '$anggaran',
+							pemasukan = '$pemasukan' 
+					WHERE 
+							id_film='$id_film'";
+		}
+
+	//	cek ganti gambar
+		if($background){
+
+	//  hapus foto lama
+		unlink("foto/".$fotolama);
+		unlink("foto/".$bglama);
+
+	//  ganti gambar
+		$config['upload_path']			= './foto/';
+		$config['allowed_types']		= 'jpg|png';
+	//	$config['file_name']        	= $poster;
+		$config['remove_spaces'] 		= FALSE;
+
+		$this->load->library('upload', $config);
+
+		$this->upload->do_upload('background'); //hrus sesuai dengan nama d input
+
+		$query = "UPDATE film SET namaFilm = '$nama',
+							rating = '$rating',
+							genre = '$genre',
+							durasi = '$durasi',
+							tgl_rilis = '$tanggal',
+							poster_film = '$poster',
+							overview = '$overview',
+							bgimage = '$background',
+							bahasa = '$bahasa',
+							anggaran = '$anggaran',
+							pemasukan = '$pemasukan' 
+					WHERE 
+							id_film='$id_film'";
+
+		}else{
+		// tidak ganti gambar
+			$query = "UPDATE film SET namaFilm = '$nama',
+							rating = '$rating',
+							genre = '$genre',
+							durasi = '$durasi',
+							tgl_rilis = '$tanggal',
+							overview = '$overview',
+							bahasa = '$bahasa',
+							anggaran = '$anggaran',
+							pemasukan = '$pemasukan' 
+					WHERE 
+							id_film='$id_film'";
+		}
+
+		
+
+		
+
 
 		$this->db->query($query);
 

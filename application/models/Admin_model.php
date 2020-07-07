@@ -46,6 +46,7 @@ class Admin_model extends CI_Model
 		$config['upload_path']			= './foto/';
 		$config['allowed_types']		= 'jpg|png';
 	//	$config['file_name']        	= $poster;
+		$config['remove_spaces'] 		= FALSE;
 
 		$this->load->library('upload', $config);
 
