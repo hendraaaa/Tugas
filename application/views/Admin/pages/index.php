@@ -23,6 +23,7 @@
                   <th>Tanggal Rilis</th>
                   <th>Bahasa</th>
                   <th>Foto</th>
+                  <th>Action</th>
 
                 </tr>
                 </thead>
@@ -41,6 +42,12 @@
                         <td>'.$row['bahasa'].'</td>
                         <td>
                           <img style="width:10rem" src="'.base_url().'foto/'.$row['poster_film'].'" alt="..." class="img-rounded">
+                        </td>
+                        <td style="width:100px">
+                        <a href="" class="btn btn-warning btn-sm">
+                                <i class="fa fa-edit"></i></a>
+                              <a href="" class="btn btn-danger btn-sm">
+                              <i class="fa fa-trash"></i></a></td>
                         </td>
 
                         </tr>
