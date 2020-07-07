@@ -44,9 +44,9 @@
                           <img style="width:10rem" src="'.base_url().'foto/'.$row['poster_film'].'" alt="..." class="img-rounded">
                         </td>
                         <td style="width:100px">
-                        <a href="" class="btn btn-warning btn-sm">
+                        <a href="'.base_url().'edit/data/'.$row['id_film'].'" class="btn btn-warning btn-sm">
                                 <i class="fa fa-edit"></i></a>
-                              <a href="" class="btn btn-danger btn-sm">
+                              <a href="'.base_url().'delete/data/'.$row['id_film'].' ?foto='.$row['poster_film'].' ?foto='.$row['bgimage'].'" onClick="return confirm(\'Apakah Anda Yakin Ingin Menghapus Film Ini?\')" class="btn btn-danger btn-sm">
                               <i class="fa fa-trash"></i></a></td>
                         </td>
 
