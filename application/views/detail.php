@@ -43,7 +43,7 @@
 		</nav>
 
 		
-	<div class="background-image mt-4" style="background-image:linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.6)), url('<?php echo base_url().'foto/'.$listfilm[0]['bg-image'];?>');">
+	<div class="background-image mt-4" style="background-image:linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.6)), url('<?php echo base_url().'foto/'.$listfilm[0]['bgimage'];?>');">
 
 		<div class="row">
 		   <div class="col-md-3">

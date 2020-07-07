@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 01, 2020 at 02:26 PM
+-- Generation Time: Jul 07, 2020 at 04:26 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -29,18 +29,18 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin` (
-  `id_admin` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `foto` varchar(255) NOT NULL
+  `nama` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id_admin`, `username`, `password`, `foto`) VALUES
-(1, 'hendra12', '12345678', 'foto-hendra.png');
+INSERT INTO `admin` (`id`, `username`, `password`, `nama`) VALUES
+(1, 'admin', '123', 'Hendra');
 
 -- --------------------------------------------------------
 
@@ -179,8 +179,8 @@ CREATE TABLE `film` (
   `tgl_rilis` date NOT NULL,
   `poster_film` varchar(255) NOT NULL,
   `overview` varchar(1000) NOT NULL,
-  `bg-image` varchar(255) NOT NULL,
-  `stts` varchar(255) NOT NULL,
+  `bgimage` varchar(255) NOT NULL,
+  `stts` varchar(255) NOT NULL DEFAULT 'Rilis',
   `bahasa` varchar(255) NOT NULL,
   `anggaran` double NOT NULL,
   `pemasukan` double NOT NULL
@@ -190,7 +190,7 @@ CREATE TABLE `film` (
 -- Dumping data for table `film`
 --
 
-INSERT INTO `film` (`id_film`, `namaFilm`, `rating`, `genre`, `durasi`, `tgl_rilis`, `poster_film`, `overview`, `bg-image`, `stts`, `bahasa`, `anggaran`, `pemasukan`) VALUES
+INSERT INTO `film` (`id_film`, `namaFilm`, `rating`, `genre`, `durasi`, `tgl_rilis`, `poster_film`, `overview`, `bgimage`, `stts`, `bahasa`, `anggaran`, `pemasukan`) VALUES
 (2, 'Ad Astra (2019)', 86, 'Cerita Fiksi, Drama', '2h 3m', '2019-09-20', 'ad astra.jpg', 'Seorang astronot melakukan perjalanan ke tepi luar tata surya untuk menemukan ayahnya dan mengungkap misteri yang mengancam kelangsungan hidup planet kita. Dia mengungkap rahasia yang menantang sifat keberadaan manusia dan tempat kita di kosmos.', 'bg-ad-astra.jpg', 'Rilis', 'Inggris', 8750000000, 13280742700),
 (3, 'Bloodshot (2020)', 70, 'Aksi, Cerita Fiksi', '1h 49m', '2020-03-13', 'bloodshot.jpg', 'Ray Garrison Bloodshot adalah seorang prajurit yang dihidupkan kembali oleh sebuah nanoteknologi. Karena teknologi ini ia memiliki kemampuan baru yang luar biasa. Namun masa lalu Ray tiba-tiba muncul dan membuatnya penasaran dengan jati dirinya. Dengan ke', 'bg-bloodshot.jpg', 'Rilis', 'Inggris', 4200000000, 2842885500),
 (4, 'Scoob! (2020)', 80, 'Keluarga, Animasi, Komedi, Misteri, Petualangan', '1h 34m', '2020-05-15', 'scoob!.jpg', 'Film ini menceritakan bagaimana awal pertemuan Scooby dan Shaggy. Shaggy yang coba menyelamatkan Scooby dari seorang polisi hingga mereka berdua akhirnya bersahabat. Mereka berdua pun bertemu Freddie, Velma dan Daphne dan menjadi anggota geng Mystery Inc.', 'bg-scoob!.jpg', 'Rilis', 'Inggris', 0, 0),
@@ -306,7 +306,7 @@ INSERT INTO `film_tayang` (`id_film_tayang`, `id_film`) VALUES
 -- Indexes for table `admin`
 --
 ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id_admin`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `aktor`
@@ -350,7 +350,7 @@ ALTER TABLE `film_tayang`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `aktor`
@@ -362,7 +362,7 @@ ALTER TABLE `aktor`
 -- AUTO_INCREMENT for table `film`
 --
 ALTER TABLE `film`
-  MODIFY `id_film` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_film` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `film_favorite`

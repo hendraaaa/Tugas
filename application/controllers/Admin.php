@@ -22,5 +22,12 @@ class Admin extends CI_Controller {
 		$data['halaman'] = 'admin/pages/addfilm';
 		
 		$this->load->view('admin',$data);
+	}
+	public function addAksi(){
+		$this->load->helper('url');
+		$this->load->model('Admin_model');
+		$this->Admin_model->addAktor();
+		redirect('admin');
+
 	}	
 }
