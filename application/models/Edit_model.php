@@ -200,7 +200,7 @@ class Edit_model extends CI_Model{
 								umur = '$umur',
 
 								biografu = '$biografi',
-								id_film ='$riwayat'
+								id_film ='$riwayat',
 
 								biografu = '$biografi'
 
