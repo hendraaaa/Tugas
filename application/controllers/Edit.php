@@ -34,4 +34,30 @@ class Edit extends CI_Controller {
 		$this->Edit_model->editfilm();
 		redirect('admin');
 	}
+
+	public function dataaktor($id_aktor){
+		$this->load->helper('url');
+
+		$this->load->model('Edit_model');
+
+		//ambil jumlah
+		$this->load->model('Home_model');
+		$data['total'] = $this->Home_model->countfilm();
+		$data['totalfav'] = $this->Home_model->countfilmfav();
+		$data['totalaktor'] = $this->Home_model->countaktor();
+		$data['detailaktor'] = $this->Edit_model->detailaktor($id_aktor);
+
+
+		// tampilan
+		$data['halaman'] = ('admin/pages/editaktor');
+		$this->load->view('admin',$data);
+
+	}
+
+	public function aksiaktor(){
+		$this->load->helper('url');
+		$this->load->model('Edit_model');
+		$this->Edit_model->editaktor();
+		redirect('admin/aktor');
+	}
 }

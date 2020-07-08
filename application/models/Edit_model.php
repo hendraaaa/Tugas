@@ -133,4 +133,62 @@ class Edit_model extends CI_Model{
 
 		return; 
 	}
+	public function detailaktor($id_aktor){
+
+		// buat koneksi
+		$this->load->database();
+
+		// buat query
+		$query = "SELECT * FROM aktor WHERE id_aktor='$id_aktor'";
+		// eks query
+		$result = $this->db->query($query);
+
+		// uraikan data
+		$data = $result->result_array();
+
+		// var_dump($data);die;
+
+		// kembalikan hasil proses ke contro
+		return $data;
+	}
+
+	public function editaktor(){
+		$this->load->database();
+		$this->load->helper('form','url');
+
+		$id_aktor = $this->input->post('id_aktor');
+		$fotolama = $this->input->post('fotolama');
+		$nama = $this->input->post('nama');
+		$jk = $this->input->post('jk');
+		$tgl = $this->input->post('tanggal');
+		$umur = $this->input->post('umur');
+		$biografi = $this->input->post('biografi');
+		$riwayat = $this->input->post('riwayat');
+
+		$foto = $_FILES['fotoaktor']['name'];
+		
+		$foto = time().$nama.$_FILES['foto']['name'];;
+
+		$config['upload_path']			= './foto/';
+		$config['allowed_types']		= 'jpg|png';
+		$config['file_name']        	= $foto;
+		$config['remove_spaces'] 		= FALSE;
+
+		$this->load->library('upload', $config);
+
+		$this->upload->do_upload('foto'); //hrus sesuai dengan nama d input
+
+		$query = "UPDATE aktor 	jenis_kl = '$jenis_kl',
+								nama = '$nama',
+								tgl_lahir = '$tgl_lahir',
+								umur = '$umur',
+								biografu = '$biografu',
+								foto = '$foto',
+								id_film = '$id_film'
+							WHERE id_aktor='$id_aktor'";
+
+		$this->db->query($query);
+
+		return;
+	}
 }
