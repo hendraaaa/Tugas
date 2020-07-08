@@ -5,7 +5,7 @@
 class Admin_model extends CI_Model
 {
 	
-	public function addAktor()
+	public function addFilm()
 	{
 		$this->load->database();
 		$this->load->helper('form','url');
@@ -64,6 +64,51 @@ class Admin_model extends CI_Model
 		$this->db->query($query);
 
 		return; 
+	}
+	public function addAktor(){
+		$this->load->database();
+		$this->load->helper('form','url');
+		$nama = $this->input->post('nama');
+		$jk = $this->input->post('jk');
+		$tgl = $this->input->post('tanggal');
+		$umur = $this->input->post('umur');
+		$biografi = $this->input->post('biografi');
+		$riwayat = $this->input->post('riwayat');
+		
+		$foto = time().$nama.$_FILES['foto']['name'];;
+
+		$config['upload_path']			= './foto/';
+		$config['allowed_types']		= 'jpg|png';
+		$config['file_name']        	= $foto;
+		$config['remove_spaces'] 		= FALSE;
+
+		$this->load->library('upload', $config);
+
+		$this->upload->do_upload('foto'); //hrus sesuai dengan nama d input
+
+		$query = "INSERT INTO aktor (jenis_kl,nama,tgl_lahir,umur,biografu,foto,id_film) VALUES('$jk','$nama','$tgl','$umur','$biografi','$foto','$riwayat')";
+
+		$this->db->query($query);
+
+		return; 				
+	}
+	public function hapus($id){
+		// koneksi
+		$this->load->database();
+
+		$fotolama = $this->input->get('foto');
+
+		
+
+		// hapus foto lama
+		unlink("foto/".$fotolama);
+
+		// buat query
+		$query = "DELETE FROM aktor WHERE id_aktor='$id'";
+		// eks query
+		$this->db->query($query);
+
+		return;
 	}
 	
 }

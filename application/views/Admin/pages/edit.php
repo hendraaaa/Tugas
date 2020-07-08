@@ -42,15 +42,15 @@
 	              </div>
 	               <div class="form-group">
 		                <label for="exampleInputnama">Overview</label>
-                  		<textarea class="form-control" rows="3" placeholder="Enter ..." name="overview" value="<?php echo $detailfilm[0]['overview'] ?>"></textarea>
+                  		<textarea class="form-control" rows="3" placeholder="Enter ..." name="overview"><?php echo $detailfilm[0]['overview'] ?></textarea>
 	                  	     		
 	             	</div>
 	             
 	             	 <div class="form-group">
 		                <label>Bahasa</label>
-		                <select class="form-control" style="width: 100%;" name="bahasa" value="<?php echo $detailfilm[0]['bahasa'] ?>">
-		                	<option>Inggris</option>
-        					<option>Indonesia</option>
+		                <select class="form-control" style="width: 100%;" name="bahasa" >
+		                	<option value="Inggris" <?php if($detailfilm[0]['bahasa'] == 'Inggris') echo 'selected="selected"' ?> >Inggris</option>
+        					<option value="Indonesia" <?php if($detailfilm[0]['bahasa'] == 'Indonesia') echo 'selected="selected"' ?> >Indonesia</option>
       					</select>
 	                  	     		
 	             	</div>

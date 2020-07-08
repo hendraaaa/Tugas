@@ -63,7 +63,6 @@ class Edit_model extends CI_Model{
 
 	//  hapus foto lama
 		unlink("foto/".$fotolama);
-		unlink("foto/".$bglama);
 
 	//  ganti gambar
 		$config['upload_path']			= './foto/';
@@ -82,34 +81,14 @@ class Edit_model extends CI_Model{
 							tgl_rilis = '$tanggal',
 							poster_film = '$poster',
 							overview = '$overview',
-							bgimage = '$background',
 							bahasa = '$bahasa',
 							anggaran = '$anggaran',
 							pemasukan = '$pemasukan' 
 					WHERE 
 							id_film='$id_film'";
 
-		}else{
-		// tidak ganti gambar
-			$query = "UPDATE film SET namaFilm = '$nama',
-							rating = '$rating',
-							genre = '$genre',
-							durasi = '$durasi',
-							tgl_rilis = '$tanggal',
-							overview = '$overview',
-							bahasa = '$bahasa',
-							anggaran = '$anggaran',
-							pemasukan = '$pemasukan' 
-					WHERE 
-							id_film='$id_film'";
-		}
-
-	//	cek ganti gambar
-		if($background){
-
-	//  hapus foto lama
-		unlink("foto/".$fotolama);
-		unlink("foto/".$bglama);
+		}elseif ($background) {
+			unlink("foto/".$bglama);
 
 	//  ganti gambar
 		$config['upload_path']			= './foto/';
@@ -126,7 +105,6 @@ class Edit_model extends CI_Model{
 							genre = '$genre',
 							durasi = '$durasi',
 							tgl_rilis = '$tanggal',
-							poster_film = '$poster',
 							overview = '$overview',
 							bgimage = '$background',
 							bahasa = '$bahasa',
@@ -134,7 +112,6 @@ class Edit_model extends CI_Model{
 							pemasukan = '$pemasukan' 
 					WHERE 
 							id_film='$id_film'";
-
 		}else{
 		// tidak ganti gambar
 			$query = "UPDATE film SET namaFilm = '$nama',
@@ -149,9 +126,6 @@ class Edit_model extends CI_Model{
 					WHERE 
 							id_film='$id_film'";
 		}
-
-		
-
 		
 
 

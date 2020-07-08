@@ -55,7 +55,7 @@
 		             <div class="form-group">
 		                <label for="exampleInputnama">Anggaran</label>
 
-	                  	<input type="text" class="form-control uang" id="exampleInputEmail1" placeholder="Pemasukan" name="anggaran">	           		
+	                  	<input type="text" class="form-control uang" id="exampleInputEmail1" placeholder="Pemasukan" name="anggaran" value="1000000">	           		
 
 	             	 </div>
 		             <div class="form-group">

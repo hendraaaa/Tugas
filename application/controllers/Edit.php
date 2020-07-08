@@ -14,7 +14,14 @@ class Edit extends CI_Controller {
 
 		// ambil detail data
 		$this->load->model('Edit_model');
+		
+		//ambil jumlah
+		$this->load->model('Home_model');
+		$data['total'] = $this->Home_model->countfilm();
+		$data['totalfav'] = $this->Home_model->countfilmfav();
+		$data['totalaktor'] = $this->Home_model->countaktor();
 		$data['detailfilm'] = $this->Edit_model->detailfilm($id_film);
+		//
 
 		// tampilan
 		$data['halaman'] = ('admin/pages/edit');
