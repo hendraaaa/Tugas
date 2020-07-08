@@ -1,5 +1,5 @@
  <div class="col-xs-12">
- 	<form method="post" action="<?php echo base_url()?>editaktor/aksiaktor" enctype="multipart/form-data">
+ 	<form method="post" action="<?php echo base_url()?>edit/aksiaktor" enctype="multipart/form-data">
 
  		<input type="hidden" name="id_aktor" value="<?php echo $detailaktor[0]['id_aktor'] ?>">
  		<input type="hidden" name="fotolama" value="<?php echo $detailaktor[0]['foto'] ?>">

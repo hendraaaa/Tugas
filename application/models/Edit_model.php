@@ -165,7 +165,7 @@ class Edit_model extends CI_Model{
 		$biografi = $this->input->post('biografi');
 		$riwayat = $this->input->post('riwayat');
 
-		$foto = $_FILES['fotoaktor']['name'];
+		$foto = $_FILES['foto']['name'];
 		
 		$foto = time().$nama.$_FILES['foto']['name'];;
 
