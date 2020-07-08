@@ -151,7 +151,6 @@ class Edit_model extends CI_Model{
 		// kembalikan hasil proses ke contro
 		return $data;
 	}
-
 	public function editaktor(){
 		$this->load->database();
 		$this->load->helper('form','url');
@@ -159,16 +158,22 @@ class Edit_model extends CI_Model{
 		$id_aktor = $this->input->post('id_aktor');
 		$fotolama = $this->input->post('fotolama');
 		$nama = $this->input->post('nama');
-		$jk = $this->input->post('jk');
+		$jk = $this->input->post('jenis_kl');
 		$tgl = $this->input->post('tanggal');
 		$umur = $this->input->post('umur');
-		$biografi = $this->input->post('biografi');
+		$biografi = $this->input->post('biografu');
 		$riwayat = $this->input->post('riwayat');
-
-		$foto = $_FILES['foto']['name'];
 		
-		$foto = time().$nama.$_FILES['foto']['name'];;
+		$foto = $_FILES['foto']['name'];
 
+		
+
+		// cek ganti gambar
+		if ($foto) {
+
+		unlink("foto/".$fotolama);
+
+		// ganti gambar
 		$config['upload_path']			= './foto/';
 		$config['allowed_types']		= 'jpg|png';
 		$config['file_name']        	= $foto;
@@ -178,15 +183,28 @@ class Edit_model extends CI_Model{
 
 		$this->upload->do_upload('foto'); //hrus sesuai dengan nama d input
 
-		$query = "UPDATE aktor 	jenis_kl = '$jenis_kl',
+		$query = "UPDATE aktor SET jenis_kl = '$jk',
 								nama = '$nama',
-								tgl_lahir = '$tgl_lahir',
+								tgl_lahir = '$tgl',
 								umur = '$umur',
-								biografu = '$biografu',
-								foto = '$foto',
-								id_film = '$id_film'
-							WHERE id_aktor='$id_aktor'";
+								biografu = '$biografi',
+								foto = '$foto'
+							WHERE 
+								id_aktor= '$id_aktor'";
 
+		}else{
+			// tidak ganti gambar
+			$query = "UPDATE aktor SET jenis_kl = '$jk',
+								nama = '$nama',
+								tgl_lahir = '$tgl',
+								umur = '$umur',
+								biografu = '$biografi',
+							WHERE 
+								id_aktor= '$id_aktor'";
+
+		}
+
+		
 		$this->db->query($query);
 
 		return;

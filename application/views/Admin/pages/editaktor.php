@@ -17,9 +17,9 @@
 	             	 </div>
 	             	 <div class="form-group">
 		                <label>Jenis Kelamin</label>
-		                <select class="form-control" style="width: 100%;" name="jk" value="<?php echo $detailaktor[0]['jenis_kl'] ?>">
-        					<option>Pria</option>
-        					<option>Wanita</option>
+		                <select class="form-control" style="width: 100%;" name="jenis_kl">
+        					<option value="Pria" <?php if($detailaktor[0]['jenis_kl'] == 'Pria') echo 'selected="selected"' ?> >Pria</option>
+        					<option value="Wanita" <?php if($detailaktor[0]['jenis_kl'] == 'Wanita') echo 'selected="selected"' ?> >Wanita</option>
       					</select>
 	                  	     		
 	             	</div>
@@ -50,7 +50,7 @@
 	             
 	             	<div class="form-group">
               		  	<label>Riwayatan Film</label>
-		                <select class="form-control select2" style="width: 100%;" name="riwayat"<?php echo $detailfilm[0]['riwayat'] ?>>
+		                <select class="form-control select2" style="width: 100%;" name="riwayat"<?php echo $detailfilm[0]['id_film'] ?>>
 		           
 		                	<?php
 		                		foreach ($film as $row) {
@@ -68,9 +68,6 @@
 		            
 	             	 <div class="form-group">
 		                  <label for="exampleInputFile">foto</label>
-		                  <div class="image-wrapper">
-                                <img src="<?php echo base_url().'foto/'.$detailaktor[0]['foto'] ?>" width="100rem">
-                            </div>
 		                  <input type="file" id="exampleInputFile" name="foto" value="<?php echo base_url().'foto/'.$detailaktor[0]['foto'] ?>">
                 	</div>
                 	
