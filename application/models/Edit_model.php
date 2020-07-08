@@ -156,6 +156,7 @@ class Edit_model extends CI_Model{
 		$this->load->helper('form','url');
 
 		$id_aktor = $this->input->post('id_aktor');
+
 		$fotolama = $this->input->post('fotolama');
 		$nama = $this->input->post('nama');
 		$jk = $this->input->post('jenis_kl');
@@ -163,6 +164,7 @@ class Edit_model extends CI_Model{
 		$umur = $this->input->post('umur');
 		$biografi = $this->input->post('biografu');
 		$riwayat = $this->input->post('riwayat');
+
 		
 		$foto = $_FILES['foto']['name'];
 
@@ -188,9 +190,7 @@ class Edit_model extends CI_Model{
 								tgl_lahir = '$tgl',
 								umur = '$umur',
 								biografu = '$biografi',
-								foto = '$foto'
-							WHERE 
-								id_aktor= '$id_aktor'";
+								foto = '$foto',id_film ='$riwayat' WHERE id_aktor = '$id_aktor' ";
 
 		}else{
 			// tidak ganti gambar
@@ -199,6 +199,7 @@ class Edit_model extends CI_Model{
 								tgl_lahir = '$tgl',
 								umur = '$umur',
 								biografu = '$biografi',
+								id_film ='$riwayat'
 							WHERE 
 								id_aktor= '$id_aktor'";
 

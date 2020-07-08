@@ -50,15 +50,17 @@
 	             
 	             	<div class="form-group">
               		  	<label>Riwayatan Film</label>
-		                <select class="form-control select2" style="width: 100%;" name="riwayat"<?php echo $detailfilm[0]['id_film'] ?>>
+		                <select class="form-control select2" style="width: 100%;" name="riwayat">
 		           
 		                	<?php
 		                		foreach ($film as $row) {
-		                			echo '
-		                					<option value="'.$row['id_film'].'">'.$row['namaFilm'].'</option>
+		                			?>
+		                			
+		                				<option value="<?php echo $row['id_film']?>" <?php if($row['id_film'] == $detailaktor[0]['id_film']) echo 'selected="selected"'?> ><?php echo $row['namaFilm']?></option>
 
-		                			';
+		                		<?php
 		                		}
+
 		                	?>
 		                 
 		                </select>

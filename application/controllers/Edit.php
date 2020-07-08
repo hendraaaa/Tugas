@@ -46,6 +46,8 @@ class Edit extends CI_Controller {
 		$data['totalfav'] = $this->Home_model->countfilmfav();
 		$data['totalaktor'] = $this->Home_model->countaktor();
 		$data['detailaktor'] = $this->Edit_model->detailaktor($id_aktor);
+		$data['film'] = $this->Home_model->ambilfilm();
+		
 
 
 		// tampilan
