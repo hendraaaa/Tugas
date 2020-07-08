@@ -198,7 +198,7 @@ class Edit_model extends CI_Model{
 								nama = '$nama',
 								tgl_lahir = '$tgl',
 								umur = '$umur',
-								biografu = '$biografi',
+								biografu = '$biografi'
 							WHERE 
 								id_aktor= '$id_aktor'";
 
