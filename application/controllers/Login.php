@@ -49,7 +49,9 @@ class Login extends CI_Controller {
 		elseif ($username == $data->username && $password == $data->password) {
 			 $data = array(
           	'authenticated'=>true,
-          	'username'=>$data->username
+          	'username'=>$data->username,
+          	'foto'=>$data->foto
+
 
          
         );
@@ -59,9 +61,11 @@ class Login extends CI_Controller {
 	}
 }
 public function logout(){
-		$this->load->helper('url');
+	$this->load->helper('url');
 
     $this->session->sess_destroy();
+
+
     redirect('home');
   }
 }
